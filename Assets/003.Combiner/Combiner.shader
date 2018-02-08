@@ -14,7 +14,7 @@ Shader "SLT/Combiner"
 		Pass 
 		{
 			Color [_Color]
-			SetTexture[_MainTex]
+			SetTexture[_MainTex] { combine primary * texture }
 		}
 	}
 }

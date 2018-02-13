@@ -1,6 +1,6 @@
 ﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
 
-Shader "CG/Gray Cube"
+Shader "CG/Basics/Gray Cube"
 {
 	SubShader { 	  
       Pass { 

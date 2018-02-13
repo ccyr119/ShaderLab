@@ -1,40 +1,35 @@
 ﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
 
-Shader "CG/Built-in Vertex Input Parameters"
+Shader "CG/Basics/Built-in Vertex Input Parameters 2"
 {
 	SubShader { 
       Pass { 
          CGPROGRAM 
  
          #pragma vertex vert  
-         #pragma fragment frag 
+         #pragma fragment frag
+		 #include "UnityCG.cginc"
  
-         struct vertexInput {
-            float4 vertex : POSITION;
-            float4 tangent : TANGENT;  
-            float3 normal : NORMAL;
-            float4 texcoord : TEXCOORD0;  
-            float4 texcoord1 : TEXCOORD1; 
-            float4 texcoord2 : TEXCOORD2;  
-            float4 texcoord3 : TEXCOORD3; 
-            fixed4 color : COLOR; 
-         };
          struct vertexOutput {
             float4 pos : SV_POSITION;
             float4 col : TEXCOORD0;
          };
  
-         vertexOutput vert(vertexInput input) 
+         vertexOutput vert(appdata_full input) 
          {
             vertexOutput output;
  
             output.pos =  UnityObjectToClipPos(input.vertex);
-            output.col = input.texcoord; // set the output color
+            // output.col = float4(input.texcoord.x, 0.0, 0.0, 1.0);
+			// output.col = float4(0.0, input.texcoord.y, 0.0, 1.0);
+
+			output.col = float4(
+               (input.normal + float3(1.0, 1.0, 1.0)) / 2.0, 1.0);
 
             // other possibilities to play with:
 
             // output.col = input.vertex;
-             output.col = input.tangent;
+            // output.col = input.tangent;
             // output.col = float4(input.normal, 1.0);
             // output.col = input.texcoord;
             // output.col = input.texcoord1;

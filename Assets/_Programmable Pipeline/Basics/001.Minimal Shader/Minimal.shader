@@ -1,6 +1,6 @@
 ﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
 
-Shader "CG/Minimal"
+Shader "CG/Basics/Minimal"
 {
 	SubShader { // Unity chooses the subshader that fits the GPU best
       Pass { // some shaders require multiple passes

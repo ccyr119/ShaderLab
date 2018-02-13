@@ -1,6 +1,6 @@
 ﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
 
-Shader "CG/Shading in World Space"
+Shader "CG/Basics/Built-in Vertex Input Parameters"
 {
 	SubShader { 
       Pass { 

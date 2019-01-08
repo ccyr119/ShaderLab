@@ -20,7 +20,7 @@
         };
         half _Glossiness;
         half _Metallic;
-        UNITY_INSTANCING_CBUFFER_START(PropsName)
+        UNITY_INSTANCING_CBUFFER_START(Props)
            UNITY_DEFINE_INSTANCED_PROP(fixed4, _Color)
         UNITY_INSTANCING_CBUFFER_END
         void surf (Input IN, inout SurfaceOutputStandard o) {
